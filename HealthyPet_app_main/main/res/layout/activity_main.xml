@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--
+        图片部分：
+        - 使用 ImageView 显示图片
+        - 设置 android:scaleType="centerInside" 保证图片不会超出边界
+        - 使用 app:layout_constraintWidth_percent="0.8" 让宽度为屏幕的 80%
+        - 设置宽高比为 1:1（正方形），高度自动计算
+        - 图片位于布局顶部
+    -->
+
+    <!--
+        文字部分（TextView）：
+        - 显示欢迎语
+        - 居中显示
+        - 位于 ImageView 下方
+        - 使用 app:layout_constraintVertical_bias 控制它在上下约束之间的位置
+        - 同时约束到父布局底部，避免文字被挤压到屏幕外
+    -->
+
+    <!--
+        按钮部分（Button）：
+        - 位于 TextView 下方
+        - 居中显示
+        - 设置了 android:layout_marginTop 增加与文字的间距
+    -->
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="144dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/dog_cat_s"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <TextView
+        android:id="@+id/t1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="开启你的萌宠健康之旅"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        app:layout_constraintVertical_bias="0.073" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="立即体验 YoungDog1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/t1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
